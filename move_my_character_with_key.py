@@ -59,8 +59,19 @@ while running:
     update_canvas()
     handle_events()
 
+    # 캐릭터 이동
     x += dir_x * 5
     y += dir_y * 5
+
+    if x < 0:
+        x = 0
+    elif x > 800:
+        x = 800
+
+    if y < 0:
+        y = 0
+    elif y > 600:
+        y = 600
 
     frame = (frame + 1) % 8
     delay(0.05)
