@@ -46,7 +46,10 @@ while running:
     TUK_ground.draw(400, 300)
 
     if dir_x != 0 or dir_y != 0:
-        character.clip_draw(frame * 100, 100, 100, 100, x, y)
+        if dir_x > 0:
+            character.clip_draw(frame * 100, 100, 100, 100, x, y)
+        else:
+            character.clip_draw(frame * 100, 0, 100, 100, x, y)
     else:
         character.clip_draw(frame * 100, 300, 100, 100, x, y)
 
